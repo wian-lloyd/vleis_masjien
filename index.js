@@ -15,7 +15,7 @@ client.on('ready', () => {
 	botDetails = {
 		intro: `Hello world! I am ${client.user.tag}`,
 		description: 'I am a lean mean meat machine!',
-		github: 'www.google.com',
+		github: 'https://github.com/wian-lloyd/vleis_masjien',
 		creator: ['Wian Lloyd 🐦', '@LloydWian'],
 		colour: 'D34F73',
 		version: 'v1.0.0',
@@ -112,6 +112,7 @@ client.on('message', msg => {
 					return msg.reply('į̷̨̗̮̳̫͖͕̟̟̤̱̂̂͋̌̎͂͌̍̇͘̕͜ͅń̴̨̡̡̨̰̣̘̳̞͖̳̻̎̈́v̵̧̼͕̰̼̹͕̠͉̻͗̋̿̎͋̏͂͒͌̈̿̾̃̚͝â̷̳̱̺̍̈́̄̇̚͝ļ̶̛̮̮͎̜̝̞̼̗͚̬̮̼̠̐̆̃͋͜ĭ̶̛͕̮̅̉̐͝͠d̴̡̙̤̖͛̾̈́̎̏̽ ̵̛̛̖̪̬̻̤̱̻̹͇̘̝̣̒̃̐̉͐͒͂͝͝ͅf̷̧͚͔̼͚͚̺͒̇̇̈́̀͝͝l̷̨̨̺͓͓͇̦̲̭̗͖̦̪͊̊͜ḙ̸̻̜̗̩͠s̷̙̬͓̩̺͐͑̓̅̅̓̅̓̄̒͗͘h̵̼̟̮̠̑̑̾͌̃̉̄̓͘̕͘͠');
 				};
 			case '$about':
+				msg.react('🍖');
 				return msg.reply({
 					embed: {
 						"title": intro,
