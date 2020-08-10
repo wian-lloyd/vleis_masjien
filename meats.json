@@ -1,0 +1,104 @@
+[
+	{
+		"meat": "Beef",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Standing-rib-roast.jpg/220px-Standing-rib-roast.jpg",
+		"wiki": "https://en.wikipedia.org/wiki/Beef",
+		"desc": "Most beef skeletal muscle meat can be used as is by merely cutting into certain parts, such as roasts, short ribs or steak (filet mignon, sirloin steak, rump steak, rib steak, rib eye steak, hanger steak, etc.), while other cuts are processed (corned beef or beef jerky). Trimmings, on the other hand, are usually mixed with meat from older, leaner (therefore tougher) cattle, are ground, minced or used in sausages. The blood is used in some varieties called blood sausage. Other parts that are eaten include other muscles and offal, such as the oxtail, liver, tongue, tripe from the reticulum or rumen, glands (particularly the pancreas and thymus, referred to as sweetbread), the heart, the brain (although forbidden where there is a danger of bovine spongiform encephalopathy, BSE, commonly referred to as mad cow disease), the kidneys, and the tender testicles of the bull (known in the United States as calf fries, prairie oysters, or Rocky Mountain oysters)."
+	},
+	{
+		"meat": "Lamb and mutton",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Lamb_meat_%281%29.jpg/220px-Lamb_meat_%281%29.jpg",
+		"wiki": "https://en.wikipedia.org/wiki/Lamb_and_mutton",
+		"desc": "A sheep in their first year is a lamb and their flesh is also lamb. A sheep in their second year and their flesh is called hogget. An older sheep’s flesh called mutton. Generally, hogget and other sheep ‘meat’ is not used by consumers outside New Zealand and Australia, only the industry."
+	},
+	{
+		"meat": "Veal",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Veal-shank.jpg/220px-Veal-shank.jpg",
+		"wiki": "https://en.wikipedia.org/wiki/Veal",
+		"desc": "Veal is the meat of calves, in contrast to the beef from older cattle. Veal can be produced from a calf of either sex and any breed; however, most veal comes from young males of dairy breeds[1] which are not used for breeding.[2] Generally, veal is more expensive than beef from older cattle. Veal production is a way to add value to dairy bull calves and to utilize whey solids, a byproduct from the manufacturing of cheese.[3]"
+	},
+	{
+		"meat": "Pork",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Schweinebauch-2.jpg/220px-Schweinebauch-2.jpg",
+		"wiki": "https://en.wikipedia.org/wiki/Pork",
+		"desc": "Pork is eaten both freshly cooked and preserved. Curing extends the shelf life of the pork products. Ham, smoked pork, gammon, bacon and sausage are examples of preserved pork. Charcuterie is the branch of cooking devoted to prepared meat products, many from pork."
+	},
+	{
+		"meat": "Kangaroo meat",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Kangaroo_Meat.jpg/250px-Kangaroo_Meat.jpg",
+		"wiki": "https://en.wikipedia.org/wiki/Kangaroo_meat",
+		"desc": "Currently most kangaroo meat is sourced from wild animals as a byproduct of population control programmes.[2][3] Both the meat and the hides are sold. Although most species of macropod are protected from non-Aboriginal hunting by law, a small number of the large-sized species which exist in high numbers can be hunted by commercial hunters.[4] This policy has been criticised by some animal rights activists.[5] On the other hand, the kangaroo harvest is supported by a wide range of professional ecologists in Australia. Groups such as the Ecological Society of Australia, the Australasian Wildlife Management Society and the Australian Mammal Society have stated their support for kangaroo harvesting. Such groups argue that basing agricultural production systems on native animals rather than introduced livestock like sheep offers considerable ecological advantages to the fragile Australian rangelands and could save greenhouse gas emissions.[6][7]"
+	},
+	{
+		"meat": "Sausage",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Kielbasa7.jpg/220px-Kielbasa7.jpg",
+		"wiki": "https://en.wikipedia.org/wiki/Sausage",
+		"desc": "Sausages are a meat product usually made from ground meat, often pork, beef, or poultry, along with salt, spices and other flavourings. Other ingredients such as grains or breadcrumbs may be included as fillers or extenders. Some sausages include other ingredients for flavour."
+	},
+	{
+		"meat": "Chicken",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Chickens_in_market.jpg/220px-Chickens_in_market.jpg",
+		"wiki": "https://en.wikipedia.org/wiki/Chicken_as_food",
+		"desc": "Chicken is the most common type of poultry in the world.[1] Owing to the relative ease and low cost of raising them in comparison to animals such as cattle or hogs, chickens have become prevalent throughout the cuisine of cultures around the world, and their meat has been variously adapted to regional tastes."
+	},
+	{
+		"meat": "Turkey",
+		"image": "https://en.wikipedia.org/wiki/Domestic_turkey",
+		"wiki": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Male_north_american_turkey_supersaturated.jpg/220px-Male_north_american_turkey_supersaturated.jpg",
+		"desc": "The domestic turkey (Meleagris gallopavo) is a large fowl, one of the two species in the genus Meleagris and the same as the wild turkey. Although turkey domestication was thought to have occurred in central Mesoamerica at least 2,000 years ago,[1] recent research suggests a possible second domestication event in the Southwestern United States between 200 BC and AD 500. However, all of the main domestic turkey varieties today descend from the turkey raised in central Mexico that was subsequently imported into Europe by the Spanish in the 16th century.[2]"
+	},
+	{
+		"meat": "Duck",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Braised_duck_teochew.jpg/220px-Braised_duck_teochew.jpg",
+		"wiki": "https://en.wikipedia.org/wiki/Duck_as_food",
+		"desc": "In food terminology, duck or duckling (when meat comes from a juvenile duck) refers to duck meat, the meat of several species of bird in the family Anatidae, found in both fresh and salt water. One species of freshwater duck, the mallard, has been domesticated and is a common livestock bird in many cultures. Duck is eaten in various cuisines around the world."
+	},
+	{
+		"meat": "Emu",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Emu_in_the_wild-1%2B_%282153629669%29.jpg/240px-Emu_in_the_wild-1%2B_%282153629669%29.jpg",
+		"wiki": "https://en.wikipedia.org/wiki/Emu",
+		"desc": "The emu (Dromaius novaehollandiae) is the second-largest living bird by height, after its ratite relative, the ostrich. It is endemic to Australia where it is the largest native bird and the only extant member of the genus Dromaius. The emu's range covers most of mainland Australia, but the Tasmanian, Kangaroo Island and King Island subspecies became extinct after the European settlement of Australia in 1788. The bird is sufficiently common for it to be rated as a least-concern species by the International Union for Conservation of Nature."
+	},
+	{
+		"meat": "Goose",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Anser_anser_1_%28Piotr_Kuczynski%29.jpg/220px-Anser_anser_1_%28Piotr_Kuczynski%29.jpg",
+		"wiki": "https://en.wikipedia.org/wiki/Goose",
+		"desc": "A goose (plural geese) is a bird of any of several waterfowl species in the family Anatidae. This group comprises the genera Anser (the grey geese), Branta (the black geese), and Chen (which includes the white geese), the latter sometimes being placed within the genus Anser. Some other birds, mostly related to the shelducks, have 'goose' as part of their names. More distantly related members of the family Anatidae are swans, most of which are larger than true geese, and ducks, which are smaller."
+	},
+	{
+		"meat": "Fish",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Fish_stuffed_with_Thai_herbs.jpg/260px-Fish_stuffed_with_Thai_herbs.jpg",
+		"wiki": "https://en.wikipedia.org/wiki/Fish_as_food",
+		"desc": "Since 1961, the average annual increase in global apparent food fish consumption (3.2 percent) has outpaced population growth (1.6 percent) and exceeded consumption of meat from all terrestrial animals, combined (2.8 percent) and individually (bovine, ovine, pig, other), except poultry (4.9 percent). In per capita terms, food fish consumption has grown from 9.0 kg in 1961 to 20.2 kg in 2015, at an average rate of about 1.5 percent per year.[1] The expansion in consumption has been driven not only by increased production, but also by a combination of many other factors, including reduced wastage, better utilization, improved distribution channels and growing demand, linked with population growth, rising incomes and urbanization.[1]"
+	},
+	{
+		"meat": "Prawn",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Penaeus_monodon.jpg/220px-Penaeus_monodon.jpg",
+		"wiki": "https://en.wikipedia.org/wiki/Prawn",
+		"desc": "The term prawn[2] is used particularly in the United Kingdom, Ireland, and Commonwealth nations, for large swimming crustaceans or shrimp, especially those with commercial significance in the fishing industry. Shrimp that are present in this category often belong to the suborder Dendrobranchiata. In North America, the term is used less frequently, typically for freshwater shrimp. The terms shrimp and prawn themselves lack scientific standing. Over the years, the way shrimp and prawn are used has changed, and these days the terms are almost interchangeable."
+	},
+	{
+		"meat": "Crab",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Liocarcinus_vernalis.jpg/220px-Liocarcinus_vernalis.jpg",
+		"wiki": "https://en.wikipedia.org/wiki/Crab",
+		"desc": "Crabs are decapod crustaceans of the infraorder Brachyura, which typically have a very short projecting 'tail' (abdomen) (Greek: βραχύς, romanized: brachys = short,[2] οὐρά / οura = tail[3]), usually hidden entirely under the thorax. They live in all the world's oceans, in fresh water, and on land, are generally covered with a thick exoskeleton, and have a single pair of pincers. Many other animals with similar names – such as hermit crabs, king crabs, porcelain crabs, horseshoe crabs, and crab lice – are not true crabs."
+	},
+	{
+		"meat": "Lobster",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/KreeftbijDenOsse.jpg/220px-KreeftbijDenOsse.jpg",
+		"wiki": "https://en.wikipedia.org/wiki/Lobster",
+		"desc": "Lobsters have long bodies with muscular tails, and live in crevices or burrows on the sea floor. Three of their five pairs of legs have claws, including the first pair, which are usually much larger than the others. Highly prized as seafood, lobsters are economically important, and are often one of the most profitable commodities in coastal areas they populate.[2] Commercially important species include two species of Homarus (which looks more like the stereotypical lobster) from the northern Atlantic Ocean, and scampi (which looks more like a shrimp, or a 'mini lobster') – the Northern Hemisphere genus Nephrops and the Southern Hemisphere genus Metanephrops. Although several other groups of crustaceans have the word 'lobster' in their names, the unqualified term 'lobster' generally refers to the clawed lobsters of the family Nephropidae.[3] Clawed lobsters are not closely related to spiny lobsters or slipper lobsters, which have no claws (chelae), or to squat lobsters"
+	},
+	{
+		"meat": "Mussel",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/CornishMussels.JPG/220px-CornishMussels.JPG",
+		"wiki": "https://en.wikipedia.org/wiki/Mussel",
+		"desc": "Mussel (/ˈmʌsəl/) is the common name used for members of several families of bivalve molluscs, from saltwater and freshwater habitats. These groups have in common a shell whose outline is elongated and asymmetrical compared with other edible clams, which are often more or less rounded or oval."
+	},
+	{
+		"meat": "Oyster",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Crassostrea_gigas_p1040848.jpg/220px-Crassostrea_gigas_p1040848.jpg",
+		"wiki": "https://en.wikipedia.org/wiki/Oyster",
+		"desc": "Oyster is the common name for a number of different families of salt-water bivalve molluscs that live in marine or brackish habitats. In some species, the valves are highly calcified, and many are somewhat irregular in shape. Many, but not all oysters are in the superfamily Ostreoidea."
+	}
+]
