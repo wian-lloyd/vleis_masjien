@@ -3,5 +3,6 @@
 	"editor.formatOnPaste": true,
 	"editor.formatOnSave": true,
 	"editor.fontLigatures": true,
-	"editor.tabSize": 4
+	"editor.tabSize": 4,
+	"prettier.useTabs": true
 }
