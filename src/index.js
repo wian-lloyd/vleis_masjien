@@ -6,7 +6,7 @@ const nodepackage = require('../package.json');
 
 require('dotenv').config();
 
-// module.exports = 
+module.exports = 
 class DiscordBot
 {
 	meats = require('../data/meats.json');
@@ -254,15 +254,6 @@ class DiscordBot
 		this.client.user.setStatus(status);
 	}
 }
-
-new DiscordBot(process.env.TOKEN, "5BC8AF");
-
-
-
-
-
-
-
 
 
 // let botDetails;
