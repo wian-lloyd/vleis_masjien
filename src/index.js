@@ -6,8 +6,7 @@ const nodepackage = require('../package.json');
 
 require('dotenv').config();
 
-module.exports = 
-class DiscordBot
+module.exports = class DiscordBot
 {
 	meats = require('../data/meats.json');
 	client = new Discord.Client();
@@ -57,9 +56,9 @@ class DiscordBot
 	 */
 	async command(msg)
 	{
-		console.log(msg.content);
+		// console.log(msg.content);
 		const [cmd, ...args] = msg.content.split(' ');
-		console.log({cmd, ...args});
+		// console.log({cmd, ...args});
 
 		if (cmd && cmd.substring(0, 1) === '$')
 		{
@@ -147,9 +146,24 @@ class DiscordBot
 	 * @param {Discord.Message} msg
 	 * @param {Number} arg
 	 */
-	ping(msg, arg)
+	ping(msg, [repeat, ...options] = args)
 	{
-		return msg.reply('pong!');
+		repeat = parseInt(repeat);
+		if (repeat && !isNaN(repeat))
+		{
+			if (repeat > 20) repeat = 20;
+			msg.reply(`Ping will pong ${repeat} times! :O`);
+
+			const intervalId = setInterval(() => {
+				if (repeat === 0) return clearInterval(intervalId);
+				msg.channel.send(`pong! 1000ms repeat: ${repeat}`);
+				repeat--;
+			}, 1000);
+		}
+		else {
+			return msg.reply('pong!');
+		}
+
 	}
 
 	randomInt(max)
@@ -254,7 +268,6 @@ class DiscordBot
 		this.client.user.setStatus(status);
 	}
 }
-
 
 // let botDetails;
 
