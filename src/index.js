@@ -301,8 +301,6 @@ module.exports = class DiscordBot {
 	}
 }
 
-new DiscordBot(process.env.TOKEN, "5BC8AF");
-
 // let botDetails;
 
 // Running message.
