@@ -6,8 +6,7 @@ const nodepackage = require('../package.json');
 
 require('dotenv').config();
 
-// module.exports =
-class DiscordBot {
+module.exports = class DiscordBot {
 	meats = require('../data/meats.json');
 	client = new Discord.Client();
 
