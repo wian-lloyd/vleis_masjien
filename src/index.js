@@ -6,8 +6,8 @@ const nodepackage = require('../package.json');
 
 require('dotenv').config();
 
-module.exports = class DiscordBot
-{
+// module.exports =
+class DiscordBot {
 	meats = require('../data/meats.json');
 	client = new Discord.Client();
 
@@ -76,6 +76,9 @@ module.exports = class DiscordBot
 				case '$poll':
 					this.poll(msg, args);
 					break;
+				case '$inspire':
+					this.inspire(msg, args);
+					break;
 				default:
 					msg.react('❌');
 					msg.reply('Unknown command!');
@@ -127,7 +130,7 @@ module.exports = class DiscordBot
 					},
 					{
 						name: 'Author:',
-						value: `${author}`,
+						value: `${JSON.stringify(author)}`,
 					},
 					{
 						name: 'License:',
@@ -146,24 +149,54 @@ module.exports = class DiscordBot
 	 * @param {Discord.Message} msg
 	 * @param {Number} arg
 	 */
-	ping(msg, [repeat, ...options] = args)
+	ping(msg, [repeat, delay = 1000,...options] = args)
 	{
+		delay = parseInt(delay);
 		repeat = parseInt(repeat);
-		if (repeat && !isNaN(repeat))
+		if (repeat && !isNaN(repeat) & !isNaN(delay))
 		{
 			if (repeat > 20) repeat = 20;
 			msg.reply(`Ping will pong ${repeat} times! :O`);
 
 			const intervalId = setInterval(() => {
 				if (repeat === 0) return clearInterval(intervalId);
-				msg.channel.send(`pong! 1000ms repeat: ${repeat}`);
+				msg.channel.send(`pong! ` + '`' + delay + '` ms');
 				repeat--;
-			}, 1000);
+			}, delay);
 		}
-		else {
+		else
+		{
 			return msg.reply('pong!');
 		}
 
+	}
+
+	/**
+	 * @param {Discord.Message} msg
+	 */
+	inspire(msg, [...options] = args)
+	{
+		// const unirest = require("unirest");
+		// const req = unirest("GET", "https://healthruwords.p.rapidapi.com/v1/quotes/");
+
+		// req.query({
+		// 	"id": "731",
+		// 	"t": "Wisdom",
+		// 	"maxR": "1",
+		// 	"size": "medium"
+		// });
+
+		// req.headers({
+		// 	"x-rapidapi-key": "SIGN-UP-FOR-KEY",
+		// 	"x-rapidapi-host": "healthruwords.p.rapidapi.com",
+		// 	"useQueryString": true
+		// });
+
+		// req.end(function (res) {
+		// 	if (res.error) throw new Error(res.error);
+
+		// 	console.log(res.body);
+		// });
 	}
 
 	randomInt(max)
@@ -228,7 +261,7 @@ module.exports = class DiscordBot
 			'7️⃣', '8️⃣', '9️⃣' 
 		];
 
-		console.log('new poll:', {title, options});
+		// console.log('new poll:', {title, options});
 
 		const poll = await msg.channel.send(
 			{
@@ -268,6 +301,8 @@ module.exports = class DiscordBot
 		this.client.user.setStatus(status);
 	}
 }
+
+new DiscordBot(process.env.TOKEN, "5BC8AF");
 
 // let botDetails;
 
