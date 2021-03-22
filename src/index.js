@@ -10,9 +10,12 @@ module.exports = class DiscordBot {
 	meats = require('../data/meats.json');
 	client = new Discord.Client();
 
-	constructor(TOKEN, color)
-	{
-
+	/**
+	 * @param {string} TOKEN 
+	 * @param {string} color 
+	 * @param {string[]} joinRoles 
+	 */
+	constructor(TOKEN, color, joinRoles = []) {
 		this.color = color;
 
 		this.client
@@ -21,11 +24,18 @@ module.exports = class DiscordBot {
 			.on('ready', () => this.startup());
 		this.client
 			.on('message', msg => this.command(msg));
+		this.client
+			.on('guildMemberAdd', (guildMember) => {
+				joinRoles.forEach(role => {
+					guildMember.addRole(
+						guildMember.guild.roles.find(({name, id}) => id === role)
+					);
+				});
+			});
 
 	}
 
-	async startup()
-	{
+	async startup() {
 
 		(() =>
 			{
@@ -53,11 +63,8 @@ module.exports = class DiscordBot {
 	/**
 	 * @param {Discord.Message} msg
 	 */
-	async command(msg)
-	{
-		// console.log(msg.content);
+	async command(msg) {
 		const [cmd, ...args] = msg.content.split(' ');
-		// console.log({cmd, ...args});
 
 		if (cmd && cmd.substring(0, 1) === '$')
 		{
@@ -90,8 +97,7 @@ module.exports = class DiscordBot {
 	/**
 	 * @param {Discord.Message} msg
 	 */
-	about(msg)
-	{
+	about(msg) {
 		msg.react('ℹ');
 
 		const
@@ -121,7 +127,7 @@ module.exports = class DiscordBot {
 					},
 					{
 						name: 'Commands:',
-						value: '**$about** - this commmand, \n**$meat** - get random meat, \n **$ping** - pong',
+						value: '**$about** - this commmand, \n**$meat** - get random meat, \n **$ping** *PING_AMOUNT* *DELAY* - pong \n **$poll** *TITLE* *OPTION 1-9* - create a new poll',
 					},
 					{
 						name: 'Github repository:',
@@ -148,8 +154,7 @@ module.exports = class DiscordBot {
 	 * @param {Discord.Message} msg
 	 * @param {Number} arg
 	 */
-	ping(msg, [repeat, delay = 1000,...options] = args)
-	{
+	ping(msg, [repeat, delay = 1000,...options] = args) {
 		delay = parseInt(delay);
 		repeat = parseInt(repeat);
 		if (repeat && !isNaN(repeat) & !isNaN(delay))
@@ -173,43 +178,16 @@ module.exports = class DiscordBot {
 	/**
 	 * @param {Discord.Message} msg
 	 */
-	inspire(msg, [...options] = args)
-	{
-		// const unirest = require("unirest");
-		// const req = unirest("GET", "https://healthruwords.p.rapidapi.com/v1/quotes/");
+	inspire(msg, [...options] = args) {}
 
-		// req.query({
-		// 	"id": "731",
-		// 	"t": "Wisdom",
-		// 	"maxR": "1",
-		// 	"size": "medium"
-		// });
-
-		// req.headers({
-		// 	"x-rapidapi-key": "SIGN-UP-FOR-KEY",
-		// 	"x-rapidapi-host": "healthruwords.p.rapidapi.com",
-		// 	"useQueryString": true
-		// });
-
-		// req.end(function (res) {
-		// 	if (res.error) throw new Error(res.error);
-
-		// 	console.log(res.body);
-		// });
-	}
-
-	randomInt(max)
-	{
+	randomInt(max) {
 		return Math.floor(Math.random() * Math.floor(max));
 	}
 
 	/**
 	 * @param {Discord.Message} msg 
 	 */
-	meat(msg)
-	{
-		// fs.appendFile('logs.txt', ` \n ${timestamp} | ${senderGuildMember.user.username} ordered some meats.`, (err) => console.error(err));
-
+	meat(msg) {
 		msg.react('🍖');
 
 		const
@@ -250,8 +228,7 @@ module.exports = class DiscordBot {
 	 * @param {Discord.Message} msg 
 	 * @param {string[]} args
 	 */
-	async poll(msg, [title, ...options] = args)
-	{
+	async poll(msg, [title, ...options] = args) {
 
 		let emoji =
 		[
@@ -259,8 +236,6 @@ module.exports = class DiscordBot {
 			'4️⃣', '5️⃣', '6️⃣',
 			'7️⃣', '8️⃣', '9️⃣' 
 		];
-
-		// console.log('new poll:', {title, options});
 
 		const poll = await msg.channel.send(
 			{
@@ -287,51 +262,18 @@ module.exports = class DiscordBot {
 	/**
 	 * @param {string[]} activity
 	 */
-	set activity([activity, type])
-	{
+	set activity([activity, type]) {
 		this.client.user.setActivity(activity, { type });
 	}
 
 	/**
 	 * @param {string} status
 	 */
-	set status(status)
-	{
+	set status(status) {
 		this.client.user.setStatus(status);
 	}
 }
 
-// let botDetails;
-
-// Running message.
-// client.on('ready', () => {
-// 	botDetails = {
-// 		intro: `Hello world! I am ${client.user.tag}`,
-// 		description: 'I am a lean mean meat machine!',
-// 		github: 'https://github.com/wian-lloyd/vleis_masjien',
-// 		creator: ['Wian Lloyd 🐦', '@LloydWian'],
-// 		colour: 'D34F73',
-// 		version: 'v1.0.0',
-// 	};
-
-// 	client.user.setActivity('$about', { type: 'LISTENING' });
-
-// 	console.log(`
-// 		_____  
-// 	    ^..^     \9
-// 	    (oo)_____/ 
-// 		WW  WW
-// 	`);
-
-// 	const twirlTimer = (function () {
-// 		let P = ['\\', '|', '/', '-'];
-// 		let x = 0;
-// 		return setInterval(function () {
-// 			process.stdout.write(`${'\r'} ${P[x++]} Running ${client.user.tag}`);
-// 			x &= 3;
-// 		}, 200);
-// 	})();
-// });
 
 
 // // Commands.
