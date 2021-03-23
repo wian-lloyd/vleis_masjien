@@ -1,5 +1,5 @@
 'use strict';
-
+const fetch = require('node-fetch');
 const fs = require('fs');
 const Discord = require('discord.js');
 const nodepackage = require('../package.json');
@@ -23,15 +23,17 @@ module.exports = class DiscordBot {
 		this.client
 			.on('ready', () => this.startup());
 		this.client
-			.on('message', msg => this.command(msg));
-		this.client
-			.on('guildMemberAdd', (guildMember) => {
-				joinRoles.forEach(role => {
-					guildMember.addRole(
-						guildMember.guild.roles.find(({name, id}) => id === role)
-					);
-				});
+			.on('message', msg => {
+				if (!msg.author.bot) this.command(msg);
 			});
+		// this.client
+		// 	.on('guildMemberAdd', (guildMember) => {
+		// 		joinRoles.forEach(role => {
+		// 			guildMember.addRole(
+		// 				guildMember.guild.roles.find(({name, id}) => id === role)
+		// 			);
+		// 		});
+		// 	});
 
 	}
 
@@ -118,7 +120,7 @@ module.exports = class DiscordBot {
 				fields:
 				[
 					{
-						name: 'Name:',
+						name: 'NPM Package Name:',
 						value: name,
 					},
 					{
@@ -127,7 +129,7 @@ module.exports = class DiscordBot {
 					},
 					{
 						name: 'Commands:',
-						value: '**$about** - this commmand, \n**$meat** - get random meat, \n **$ping** *PING_AMOUNT* *DELAY* - pong \n **$poll** *TITLE* *OPTION 1-9* - create a new poll',
+						value: '**$about** - this commmand,\n**$meat** - get random meat, \n **$ping**, *amount*, *delay* - pong, \n **$poll**, *title(no spaces)*, *options 1-9*, - create a new poll, \n **%inspire** - send much needed inspiration',
 					},
 					{
 						name: 'Github repository:',
@@ -135,7 +137,7 @@ module.exports = class DiscordBot {
 					},
 					{
 						name: 'Author:',
-						value: `${JSON.stringify(author)}`,
+						value: `${JSON.stringify(author).name}`,
 					},
 					{
 						name: 'License:',
@@ -178,7 +180,17 @@ module.exports = class DiscordBot {
 	/**
 	 * @param {Discord.Message} msg
 	 */
-	inspire(msg, [...options] = args) {}
+	async inspire(msg, [...options] = args) {
+		msg.react('💌');
+
+		this.activity = ['zenquotes.io', 'WATCHING'];
+
+		const [{ q, a }] = await fetch('https://zenquotes.io/api/random');
+
+		await msg.reply(`${q} - ${a}`);
+
+		this.activity = ['$about', 'LISTENING'];
+	}
 
 	randomInt(max) {
 		return Math.floor(Math.random() * Math.floor(max));
