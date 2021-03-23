@@ -6,9 +6,16 @@ const nodepackage = require('../package.json');
 
 require('dotenv').config();
 
-module.exports = class DiscordBot {
+module.exports =
+class DiscordBot {
 	meats = require('../data/meats.json');
 	client = new Discord.Client();
+
+	dogHeaders = {
+		headers: {
+			"x-api-key": process.env.DOGTOKEN
+		}
+	}
 
 	/**
 	 * @param {string} TOKEN 
@@ -87,6 +94,15 @@ module.exports = class DiscordBot {
 				case '$inspire':
 					this.inspire(msg, args);
 					break;
+				case '$joke':
+					this.joke(msg, args);
+					break;
+				// case '$dog':
+				// 	this.dog(msg, args);
+				// 	break;
+				// case '$finddog':
+				// 	this.findDog(msg, args);
+				// 	break;
 				default:
 					msg.react('❌');
 					msg.reply('Unknown command!');
@@ -182,13 +198,56 @@ module.exports = class DiscordBot {
 	 */
 	async inspire(msg, [...options] = args) {
 		msg.react('💌');
-
 		this.activity = ['zenquotes.io', 'WATCHING'];
-
 		const [{ q, a }] = await (await fetch('https://zenquotes.io/api/random')).json();
-
 		await msg.reply(`${q} - ${a}`);
+		this.activity = ['$about', 'LISTENING'];
+	}
 
+	/**
+	 * @param {Discord.Message} msg
+	 */
+	async joke(msg, [...options] = args) {
+		msg.react('🤡');
+		this.activity = ['icanhazdadjoke.com', 'WATCHING'];
+		const { attachments: [ { fallback } ]} = await (await fetch('https://icanhazdadjoke.com/slack')).json();
+		await msg.reply(`${fallback}`);
+		this.activity = ['$about', 'LISTENING'];
+	}
+
+	/**
+	 * @param {Discord.Message} msg
+	 */
+	async dog(msg, [...options] = args) {
+		msg.react('🐕');
+		this.activity = ['api.thedogapi.com', 'WATCHING'];
+		const [{
+			breeds: [
+				{
+					weight,
+					height,
+					id,
+					name,
+					country_code,
+					bred_for,
+					breed_group,
+					life_span,
+					temperament
+				}
+			],
+			url,
+		}] = await (await fetch('https://api.thedogapi.com/v1/images/search', this.dogHeaders)).json();
+		this.activity = ['$about', 'LISTENING'];
+	}
+
+	/**
+	 * @param {Discord.Message} msg
+	 */
+	async findDog(msg, [dog, ...options] = args) {
+		dog = dog.toLowerCase().trim();
+		msg.react('🐕');
+		this.activity = ['api.thedogapi.com', 'WATCHING'];
+		dog = await (await fetch(`https://api.thedogapi.com/v1/images/search?q=${dog}`, this.dogHeaders)).json();
 		this.activity = ['$about', 'LISTENING'];
 	}
 
@@ -286,7 +345,7 @@ module.exports = class DiscordBot {
 	}
 }
 
-
+// new DiscordBot(process.env.TOKEN2, "7289DA", ['719563727313305600']);
 
 // // Commands.
 // client.on('message', (msg) => {
