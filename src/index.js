@@ -185,7 +185,7 @@ module.exports = class DiscordBot {
 
 		this.activity = ['zenquotes.io', 'WATCHING'];
 
-		const [{ q, a }] = await fetch('https://zenquotes.io/api/random');
+		const [{ q, a }] = await (await fetch('https://zenquotes.io/api/random')).json();
 
 		await msg.reply(`${q} - ${a}`);
 
