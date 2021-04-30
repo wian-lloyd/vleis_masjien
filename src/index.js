@@ -145,7 +145,13 @@ class DiscordBot {
 					},
 					{
 						name: 'Commands:',
-						value: '**$about** - this commmand,\n**$meat** - get random meat, \n **$ping**, *amount*, *delay* - pong, \n **$poll**, *title(no spaces)*, *options 1-9*, - create a new poll, \n **%inspire** - send much needed inspiration',
+						value: `
+							**$about** - this commmand;\n
+							**$meat** - get random meat;\n
+							**$ping**, *AMOUNT*, *DELAY* - pong;\n
+							**$poll**, *TITLE(no spaces)*, *OPTIONS 1-9*, - create a new poll;\n
+							**$inspire** - send much needed inspiration;`
+						,
 					},
 					{
 						name: 'Github repository:',
@@ -153,7 +159,7 @@ class DiscordBot {
 					},
 					{
 						name: 'Author:',
-						value: `${JSON.stringify(author).name}`,
+						value: `${JSON.stringify(author)}`,
 					},
 					{
 						name: 'License:',
