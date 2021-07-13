@@ -3,7 +3,7 @@ const { private_key_id, private_key } = process.env;
 
 const account = {
 	private_key_id,
-	private_key,
+	private_key: private_key.replace(/\\n/g, '\n'),
 	"type": "service_account",
 	"project_id": "wians-discord-bot",
 	"client_email": "firebase-adminsdk-x0px9@wians-discord-bot.iam.gserviceaccount.com",
