@@ -1,6 +1,6 @@
 {
 	"name": "w-discord-bot",
-	"version": "2.2.3",
+	"version": "2.2.4",
 	"description": "Discord bot.",
 	"github": "https://github.com/wian-lloyd/discord-bot",
 	"main": "src/index.js",
