@@ -5,13 +5,23 @@
 	"github": "https://github.com/wian-lloyd/discord-bot",
 	"main": "src/index.js",
 	"scripts": {
-		"start": "node index.js"
+		"start": "nodemon src/dev.js",
+		"prod": "node src/index.js",
+		"dev": "node src/dev.js"
 	},
 	"author": "Wian Lloyd",
 	"license": "ISC",
 	"dependencies": {
+		"dedent-js": "^1.0.1",
 		"discord.js": "^11.5.1",
 		"dotenv": "^8.2.0",
+		"firebase-admin": "^9.10.0",
+		"lodash": "^4.17.21",
+		"moment": "^2.29.1",
+		"node-cron": "^2.0.3",
 		"node-fetch": "^2.6.1"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.9"
 	}
 }
